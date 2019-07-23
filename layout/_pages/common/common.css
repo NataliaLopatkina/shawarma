@@ -1,5 +1,5 @@
-@import "../../_blocks/normalize/normalize.css";
-@import "../../_blocks/reset/reset.css";
-
-/* Styles */
-@import "../../_blocks/box/box.css";
+@import "../../_blocks/page/page.css";
+@import "../../_blocks/slider/slider.css";
+@import "../../_blocks/products/products.css";
+@import "../../_blocks/ceo/ceo.css";
+@import "../../_blocks/map/map.css";

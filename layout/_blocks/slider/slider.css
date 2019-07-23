@@ -1,0 +1,16 @@
+@import "../slide-item/slide-item.css";
+@import "../controls/controls.css";
+
+.slider {
+    overflow-x: hidden;
+    
+    &__list {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+
+        &.transition {
+            transition: transform 1s ease;
+        }
+    }
+}

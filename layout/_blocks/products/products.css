@@ -1,0 +1,18 @@
+@import "../product/product.css";
+
+.products {
+    &__title {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -8px;
+    }
+
+    &__item {
+        margin: 8px;
+    }
+}

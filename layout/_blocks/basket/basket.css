@@ -1,0 +1,7 @@
+.basket {
+    &__button {
+        border: none;
+        background: none;
+        outline: none;
+    }
+}

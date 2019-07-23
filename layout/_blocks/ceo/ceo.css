@@ -1,0 +1,42 @@
+.ceo {
+    text-align: center;
+    padding-top: 50px;
+
+    &__title {
+        margin-bottom: 30px;
+    }
+
+    &__container-description {
+        display: flex;
+    }
+
+    &__photo {
+        max-width: 600px;
+    }
+
+    &__description {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    &__name {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--main-color);
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    &__age {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--main-color);
+        margin-bottom: 10px;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: calc(22/18);
+        text-align: justify;
+    }
+}

@@ -1,0 +1,32 @@
+@import "../logo/logo.css";
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 150px);
+
+    &__logo {
+        margin-right: 50px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        width: calc(100% - 150px);
+    }
+
+    &__link {
+        font-size: 20px;
+        color: var(--white);
+        transition: color 0.25s ease;
+
+        &:hover {
+            color: var(--hover-color);
+        }
+
+        &:active {
+           color: var(--active-color);
+        }
+    }
+}

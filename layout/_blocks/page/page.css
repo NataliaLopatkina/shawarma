@@ -1,0 +1,16 @@
+@import "../normalize/normalize.css";
+@import "../reset/reset.css";
+
+/* Styles */
+@import "../header/header.css";
+@import "../box/box.css";
+@import "../title/title.css";
+@import "../button/button.css";
+
+.page {
+    font-family: "Open Sans Condensed", "Arial", sans-serif;
+
+    a {
+        text-decoration: none;
+    }
+}

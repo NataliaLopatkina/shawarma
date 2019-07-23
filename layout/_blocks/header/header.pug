@@ -1,0 +1,10 @@
+mixin header(obj)
+    header(class="header")
+        div(class="box header__container")
+            include ../../_blocks/nav/nav.pug
+            +nav(obj)
+            
+            include ../../_blocks/basket/basket.pug
+            +basket(obj)
+
+// END .header                

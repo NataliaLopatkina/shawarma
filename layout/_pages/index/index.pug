@@ -2,13 +2,28 @@ html(lang="ru")
     head
         meta(charset="utf-8")
         meta(name="viewport", content="initial-scale=1.0, width=device-width")
-        title To do
-        link(href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&display=swap" rel="stylesheet")
+        title Shawarma
+        link(href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700&display=swap&subset=cyrillic" rel="stylesheet")
+        link(href="https://fonts.googleapis.com/css?family=Marck+Script&display=swap&subset=cyrillic" rel="stylesheet")
         link(rel="stylesheet" href="stylesheets/common.css")
     
     body(class="page")
-        div(class="page__container")
-            main(class="main")
-                div(class="box")
+        include ../../_blocks/header/header.pug
+        +header(obj)
+
+        main(class="main")
+            include ../../_blocks/slider/slider.pug
+
+            include ../../_blocks/products/products.pug
+            +products(obj) 
+
+            include ../../_blocks/ceo/ceo.pug
+            +ceo(obj)
+
+            include ../../_blocks/map/map.pug
+            +map()
+
+
+
  
         script(src="scripts/common.js")

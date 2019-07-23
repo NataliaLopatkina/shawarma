@@ -1,0 +1,28 @@
+div(class="slider")
+    div(class="slider__list")
+        include ../../_blocks/slide-item/slide-item.pug
+        -
+            var slider = [
+                {
+                    title: "Шаурма",
+                    subtitle: "Все свои",
+                },
+
+                {
+                    numberSlide: "second",
+                    title: "Шаурма",
+                    subtitle: "Все свои",
+                },
+
+                {
+                    numberSlide: "third",
+                    title: "Шаурма",
+                    subtitle: "Все свои",
+                },
+            ] 
+
+        each obj in slider
+            +slide-item(obj)
+
+    include ../../_blocks/controls/controls.pug
+    +controls(obj)        

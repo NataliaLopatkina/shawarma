@@ -1,0 +1,15 @@
+mixin nav(obj)
+    nav(class="nav")
+        include ../../_blocks/logo/logo.pug
+        +logo(obj)(class="nav__logo")
+        
+        ul(class="nav__list")
+            li(class="nav__item")
+                a(class="nav__link" href="#5") Шаурма
+            li(class="nav__item")
+                a(class="nav__link" href="#5") Основатель
+            li(class="nav__item")
+                a(class="nav__link" href="#5") Расположение
+            li(class="nav__item")
+                a(class="nav__link" href="#5") Акции
+// END .nav                

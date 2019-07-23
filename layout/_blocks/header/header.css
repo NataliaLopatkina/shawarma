@@ -1,0 +1,14 @@
+@import "../nav/nav.css";
+@import "../basket/basket.css";
+
+.header {
+    background: var(--main-color);
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}

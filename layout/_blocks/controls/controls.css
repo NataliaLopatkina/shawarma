@@ -1,0 +1,15 @@
+.controls {
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    &__arrow {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+    }
+}
