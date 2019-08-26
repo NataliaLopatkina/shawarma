@@ -4,6 +4,11 @@
     width: 230px;
     box-shadow: 0 0 10px 0 var(--main-color);
     box-sizing: border-box;
+    transition: box-shadow 0.5s ease;
+
+    &:hover {
+        box-shadow: 0 0 15px 0 var(--main-color);
+    }
 
     &__img {
         margin-bottom: 20px;

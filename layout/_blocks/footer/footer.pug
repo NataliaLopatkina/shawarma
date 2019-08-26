@@ -1,0 +1,31 @@
+mixin footer()
+    footer(class="footer")
+        div(class="box footer__box")
+            div(class="footer__list")
+                div(class="footer__item")
+                    p(class="footer__title") Наш адрес:
+                    p(class="footer__text") 
+                        svg(class="footer__icon")
+                            use(xlink:href="images/svg-sprite/svg-sprite.svg#location")
+                        span Петровская 111
+                div(class="footer__item")
+                    p(class="footer__title") Время работы:
+                    p(class="footer__text") 
+                        svg(class="footer__icon")
+                            use(xlink:href="images/svg-sprite/svg-sprite.svg#mode")
+                        span 10 до 22
+                div(class="footer__item")
+                    p(class="footer__title") Наши контакты:
+                    a(href="tel:89034037730" class="footer__text footer__text--link")
+                        svg(class="footer__icon")
+                            use(xlink:href="images/svg-sprite/svg-sprite.svg#phone")
+                        span 89034037730
+                    a(href="mailto:example@mail.ru" class="footer__text footer__text--link")
+                        svg(class="footer__icon")
+                            use(xlink:href="images/svg-sprite/svg-sprite.svg#mail")
+                        span example@mail.ru
+
+            include ../../_blocks/social/social.pug
+            +social()
+            
+    // END .footer
