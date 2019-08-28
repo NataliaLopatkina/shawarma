@@ -1,53 +1,55 @@
 mixin products(obj)
     section(class="products")
         div(class="box products__content")
-            h3(class="title products__title") Шаурма
+            h3(class="title products__title") Lorem
             div(class="products__list")
                 include ../../_blocks/product/product.pug
                 -
                     var products = [
                         {
-                            title: "Шаурма",
-                            composition: "Лаваш, лист салата, мясо, помидор, огурец",
+                            title: "Lorem ipsum",
+                            composition: "Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum Lorem ipsum",
                             cost: "150p",
                         },
 
                         {
-                            title: "Шаурма",
-                            composition: "Лаваш, лист салата, мясо, помидор, огурец",
+                            title: "Lorem ipsum",
+                            composition: "Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum Lorem ipsum",
                             cost: "150p",
                         },
 
                         {
-                            title: "Шаурма",
-                            composition: "Лаваш, лист салата, мясо, помидор, огурец",
+                            title: "Lorem ipsum",
+                            composition: "Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum Lorem ipsum",
                             cost: "150p",
                         },
 
                         {
-                            title: "Шаурма",
-                            composition: "Лаваш, лист салата, мясо, помидор, огурец",
+                            title: "Lorem ipsum",
+                            composition: "Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum Lorem ipsum",
                             cost: "150p",
                         },
 
                         {
-                            title: "Шаурма",
-                            composition: "Лаваш, лист салата, мясо, помидор, огурец",
+                            title: "Lorem ipsum",
+                            composition: "Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum Lorem ipsum",
                             cost: "150p",
                         },
 
                         {
-                            title: "Шаурма",
-                            composition: "Лаваш, лист салата, мясо, помидор, огурец",
+                            title: "Lorem ipsum",
+                            composition: "Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum Lorem ipsum",
                             cost: "150p",
                         },
 
                         {
-                            title: "Шаурма",
-                            composition: "Лаваш, лист салата, мясо, помидор, огурец",
+                            title: "Lorem ipsum",
+                            composition: "Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum Lorem ipsum",
                             cost: "150p",
                         },
                     ]
 
                 each obj in products
-                    +product(obj)(class="products__item")  
+                    +product(obj)(class="products__item")
+
+    // END .products

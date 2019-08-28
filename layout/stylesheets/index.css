@@ -490,10 +490,11 @@ button[disabled] {
     font-size: 18px;
     color: white;
     color: var(--white);
+    border: 2px solid #C2B078;
+    border: 2px solid var(--main-color);
     background: #C2B078;
     background: var(--main-color);
     padding: 10px;
-    border: none;
     outline: none;
     -webkit-transition: background 0.25s ease;
     -o-transition: background 0.25s ease;
@@ -501,12 +502,30 @@ button[disabled] {
 }
 
 .button:hover {
-        background: #E6D690;
+        background: #ffffff;
+        color: #C2B078;
+        color: var(--main-color);
     }
 
 .button:active {
-       background: #EAE6CA;
+        border: 2px solid #EAE6CA;
+        border: 2px solid var(--active-color);
     }
+
+.image-box__img {
+        display: block;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
 
 .social {
     padding-top: 30px;
@@ -630,7 +649,7 @@ button[disabled] {
     position: relative;
     text-align: center;
     padding-top: 50px;
-    background: url("../images/slider/slide-1.jpg") no-repeat center;
+    background: url("../images/slider/product.jpg") no-repeat center;
     background-color: #C2B078;
     background-color: var(--main-color);
     width: 100%;
@@ -638,13 +657,13 @@ button[disabled] {
 }
 
 .slide-item--second {
-        background: url("../images/slider/slide-1.jpg") no-repeat center;
+        background: url("../images/slider/product.jpg") no-repeat center;
         background-color: #C2B078;
         background-color: var(--main-color);
     }
 
 .slide-item--third {
-        background: url("../images/slider/slide-1.jpg") no-repeat center;
+        background: url("../images/slider/product.jpg") no-repeat center;
         background-color: #C2B078;
         background-color: var(--main-color);
     }
@@ -741,14 +760,15 @@ button[disabled] {
     transition: -webkit-box-shadow 0.5s ease;
     -o-transition: box-shadow 0.5s ease;
     transition: box-shadow 0.5s ease;
-    transition: box-shadow 0.5s ease, -webkit-box-shadow 0.5s ease
+    transition: box-shadow 0.5s ease, -webkit-box-shadow 0.5s ease;
+    cursor: pointer
 }
 
 .product:hover {
-        -webkit-box-shadow: 0 0 15px 0 #C2B078;
-                box-shadow: 0 0 15px 0 #C2B078;
-        -webkit-box-shadow: 0 0 15px 0 var(--main-color);
-                box-shadow: 0 0 15px 0 var(--main-color);
+        -webkit-box-shadow: 0 0 20px 0 #C2B078;
+                box-shadow: 0 0 20px 0 #C2B078;
+        -webkit-box-shadow: 0 0 20px 0 var(--main-color);
+                box-shadow: 0 0 20px 0 var(--main-color);
     }
 
 .product__img {
@@ -851,6 +871,160 @@ button[disabled] {
 .map iframe {
         width: 100%;
         height: 350px;
+    }
+
+.popup-order {
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    z-index: 100000;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    -webkit-transition-property: opacity, visibility, width;
+    -o-transition-property: opacity, visibility, width;
+    transition-property: opacity, visibility, width;
+    -webkit-transition-duration: 1s;
+         -o-transition-duration: 1s;
+            transition-duration: 1s;
+    -webkit-transition-timing-function: ease;
+         -o-transition-timing-function: ease;
+            transition-timing-function: ease
+}
+
+.popup-order.is-active {
+        opacity: 1;
+        visibility: visible;
+        width: 100%;
+    }
+
+.popup-order__content {
+        max-width: 400px;
+        width: 100%;
+        padding: 20px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        background: #ffffff;
+        position: fixed;
+        top: calc(50% - 150px);
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+.popup-order__image-box {
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+
+.popup-order__name-product {
+        font-size: 20px;
+        font-weight: 700;
+        color: #C2B078;
+        color: var(--main-color);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+.popup-order__cost-product {
+        font-size: 16px;
+        color: #C2B078;
+        color: var(--main-color);
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+.popup-order__portion {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+.popup-order__portion-title {
+        font-size: 16px;
+        color: #C2B078;
+        color: var(--main-color);
+        margin-bottom: 10px;
+    }
+
+.popup-order__select {
+        color: #C2B078;
+        color: var(--main-color);
+        width: 100%;
+        padding: 5px;
+        border: 2px solid #C2B078;
+        border: 2px solid var(--main-color);
+        outline: none;
+        cursor: pointer;
+    }
+
+.popup-order__button {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+.popup-is-open {
+    overflow: hidden;
+}
+
+.order {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.order__image-box {
+        max-width: 100px;
+    }
+
+.order__title {
+        font-size: 18px;
+        font-weight: 500;
+        color: #C2B078;
+        color: var(--main-color);
+        margin-bottom: 5px;
+    }
+
+.order__portion {
+        font-size: 16px;
+        color: #C2B078;
+        color: var(--main-color);
+        margin-bottom: 5px;
+    }
+
+.popup-payment {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: none;
+}
+
+.popup-payment__content {
+        position: fixed;
+        top: calc(50% - 200px);
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 400px;
+        width: 100%;
+        padding: 20px;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        background: #ffffff;
+    }
+
+.popup-payment__title {
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 10px;
     }
 
 @media (min-width: 1500px) {

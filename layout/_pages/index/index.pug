@@ -5,7 +5,7 @@ html(lang="ru")
         title Shawarma
         link(href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700&display=swap&subset=cyrillic" rel="stylesheet")
         link(href="https://fonts.googleapis.com/css?family=Marck+Script&display=swap&subset=cyrillic" rel="stylesheet")
-        link(rel="stylesheet" href="stylesheets/common.css")
+        link(rel="stylesheet" href="stylesheets/index.min.css")
     
     body(class="page")
         include ../../_blocks/header/header.pug
@@ -25,5 +25,11 @@ html(lang="ru")
 
         include ../../_blocks/footer/footer.pug
         +footer()
+
+        include ../../_blocks/popup-order/popup-order.pug
+        +popup-order()
+
+        include ../../_blocks/popup-payment/popup-payment.pug
+        +popup-payment()
         
         script(src="scripts/common.js")

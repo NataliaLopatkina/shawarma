@@ -1,0 +1,19 @@
+mixin popup-order()
+    section(class="popup-order")
+        h2(class="visually-hidden") Зака
+        div(class="popup-order__content")
+            div(class="image-box popup-order__image-box")
+                img(class="image-box__img",
+                    src="images/products/product.jpg",
+                    alt="Product")
+            p(class="popup-order__name-product") Lorem ipsum
+            p(class="popup-order__cost-product") 150р.
+            div(class="popup-order__portion")
+                p(class="popup-order__portion-title") Порция
+                select(class="popup-order__select")
+                    option(class="popup-order__option") Большая
+                    option(class="popup-order__option") Средняя
+                    option(class="popup-order__option") Маленькая
+            button(class="button popup-order__button" type="submit") Заказать
+
+    // END .popup-order

@@ -1,0 +1,20 @@
+mixin order()
+    div(class="order")
+        div(class="image-box order__image-box")
+            img(class="image-box__img",
+            src="images/products/product.jpg",
+            alt="Product")
+        div(class="order__description")
+            p(class="order__title") Lorem ipsum dolor
+            p(class="order__portion") Lorem ipsum dolor
+            div(class="order-toggle")
+                button(class="order-toggle__button" type="button")
+                    span(class="order-toggle__button-text") -
+                span(class="order-toggle__text") 1
+                button(class="order-toggle__button" type="button")
+                    span(class="order-toggle__button-text") +
+                span(class="order-toggle-cost") 150p
+        div(class="order__remove")
+            button(class="order__remove-button" type="button") Удалить
+
+    // END .order

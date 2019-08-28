@@ -1,17 +1,18 @@
 .button {
     font-size: 18px;
     color: var(--white);
+    border: 2px solid var(--main-color);
     background: var(--main-color);
     padding: 10px;
-    border: none;
     outline: none;
     transition: background 0.25s ease;
 
     &:hover {
-        background: #E6D690;
+        background: #ffffff;
+        color: var(--main-color);
     }
 
     &:active {
-       background: #EAE6CA;
+        border: 2px solid var(--active-color);
     }
 }

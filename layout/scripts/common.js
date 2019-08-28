@@ -102,17 +102,39 @@ if (document.querySelectorAll(".controls__arrow").length > 0) {
     }
 }
 
-// Scroll top
+class Popup {
+    constructor() {
+        this.init();
+    }
 
-if (document.querySelectorAll(".slide-item__button").length > 0) {
-    let html = document.querySelector("body");
-    let buttonSlider = document.querySelectorAll(".slide-item__button");
-    let productsTitle = document.querySelector(".products__title");
-    let destination = productsTitle.offsetTop;
+    togglePopup() {
+        const popup = document.querySelector('.popup-order');
+        popup.classList.toggle('is-active');
 
-    buttonSlider.forEach(function(item) {
-        item.addEventListener("click", function() {
-            html.scrollTop = destination;
+        const page = document.querySelector('.page');
+        page.classList.toggle('popup-is-open');
+    }
+
+    init() {
+        const buttons = document.querySelectorAll('.product__order');
+        buttons.forEach((item)=> {
+            item.addEventListener('click', ()=> {
+                this.togglePopup();
+            })
         })
-    })
+
+        document.addEventListener('click', ()=> {
+            const popup = document.querySelector('.popup-order');
+            const popupActive = popup.classList.contains('is-active');
+            const target = event.target;
+            const popupTarget = popup.contains(target);
+            const targetButtonOrder = popup.querySelector('.popup-order__button');
+
+            if (popupTarget === true && popupActive && target != targetButtonOrder) {
+                this.togglePopup();
+            }
+        })
+    }
 }
+
+let popup = new Popup();

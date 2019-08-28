@@ -1,0 +1,20 @@
+mixin form-payment()
+    div(class="form-payment")
+        form(class="form-payment__content")
+            div(class="form-payment__item")
+                label(class="form-payment__label" for="name")
+                input(type="text" class="form-payment__field" id="name")
+            div(class="form-payment__item")
+                label(class="form-payment__label" for="phone")
+                input(type="text" class="form-payment__field" id="phone")
+            p(class="form-payment__text") Вариант доставки
+            div(class="form-payment__item")
+                input(type="radio" class="form-payment__field" id="pickup" name="delivery")
+                label(class="form-payment__label-delivery" for="pickup") Самовывоз
+            div(class="form-payment__item")
+                input(type="radio" class="form-payment__field" id="delivery" name="delivery")
+                label(class="form-payment__label-delivery" for="delivery") Доставка
+
+            button(class="button form-payment__button" type="submit") Оформить заказ
+
+    // END .form-payment

@@ -1,0 +1,14 @@
+mixin popup-payment()
+    section(class="popup-payment")
+        h3(class="visually-hidden") Оплата заказа
+        div(class="popup-payment__content")
+            div(class="popup-payment__header")
+                p(class="popup-payment__title") Ваш заказ:
+            
+            include ../../_blocks/order/order.pug
+            +order()
+
+            include ../../_blocks/form-payment/form-payment.pug
+            +form-payment()
+
+    // END . popup-payment
