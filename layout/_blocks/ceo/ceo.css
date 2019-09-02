@@ -8,15 +8,29 @@
 
     &__container-description {
         display: flex;
+
+        @media (--M) {
+            flex-direction: column;
+        }
     }
 
-    &__photo {
+    &__image-box {
+        flex-shrink: 0;
         max-width: 600px;
+
+        @media (--M) {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
     }
 
     &__description {
         text-align: left;
-        padding-left: 20px;
+        margin-left: 20px;
+
+        @media (--M) {
+            margin-left: 0;
+        }
     }
 
     &__name {

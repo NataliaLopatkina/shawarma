@@ -48,22 +48,16 @@
 
         @media (--M) {
             width: 768px;
-            padding-left: 30px;
-            padding-right: 30px;
         }
 
         @media (--S) {
             width: 540px;
-            padding-left: 30px;
-            padding-right: 30px;
         }
 
         @media (--XS) {
             width: 100%;
             min-width: 320px;
             max-width: 480px;
-            padding-left: 20px;
-            padding-right: 20px;
         }
     }
 }

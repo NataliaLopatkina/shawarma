@@ -2,18 +2,18 @@ mixin form-payment()
     div(class="form-payment")
         form(class="form-payment__content")
             div(class="form-payment__item")
-                label(class="form-payment__label" for="name")
+                label(class="form-payment__label" for="name") Имя
                 input(type="text" class="form-payment__field" id="name")
             div(class="form-payment__item")
-                label(class="form-payment__label" for="phone")
+                label(class="form-payment__label" for="phone") Телефон
                 input(type="text" class="form-payment__field" id="phone")
             p(class="form-payment__text") Вариант доставки
-            div(class="form-payment__item")
-                input(type="radio" class="form-payment__field" id="pickup" name="delivery")
-                label(class="form-payment__label-delivery" for="pickup") Самовывоз
-            div(class="form-payment__item")
-                input(type="radio" class="form-payment__field" id="delivery" name="delivery")
-                label(class="form-payment__label-delivery" for="delivery") Доставка
+            div(class="form-payment__item form-payment__item--delivery")
+                input(type="radio" class="form-payment__field form-payment__field--delivery" id="pickup" name="delivery" checked)
+                label(class="form-payment__label form-payment__label--delivery" for="pickup") Самовывоз
+            div(class="form-payment__item form-payment__item--delivery")
+                input(type="radio" class="form-payment__field form-payment__field--delivery" id="delivery" name="delivery")
+                label(class="form-payment__label form-payment__label--delivery" for="delivery") Доставка
 
             button(class="button form-payment__button" type="submit") Оформить заказ
 

@@ -1,0 +1,80 @@
+.form-payment {
+    padding-top: 20px;
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    &__item--delivery {
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+    }
+
+    &__label {
+        font-size: 18px;
+        color: var(--main-color);
+        display: inline-block;
+        margin-bottom: 5px;
+    }
+
+    &__field {
+        font-size: 16px;
+        color: var(--main-color);
+        width: 100%;
+        padding: 7px 5px;
+        border: 1px solid var(--main-color);
+        box-sizing: border-box;
+        outline: none;
+    }
+
+    &__field--delivery {
+        display: none;
+        width: auto;
+        margin-right: 10px;
+
+        &:checked + .form-payment__label--delivery {
+            &:after {
+                content: "";
+                position: absolute;
+                top: 5px;
+                left: 7px;
+                width: 10px;
+                height: 10px;
+                background: var(--main-color);
+                border-radius: 50%;
+            }
+        }
+    }
+
+    &__label--delivery {
+        padding-left: 30px;
+        position: relative;
+
+        &:before {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--main-color);
+            border-radius: 50%;
+            position: absolute;
+            top: -2px;
+            left: 0;
+            cursor: pointer;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--main-color);
+        margin-bottom: 10px;
+    }
+
+    &__button {
+        width: 100%;
+    }
+}

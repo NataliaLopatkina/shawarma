@@ -13,7 +13,9 @@
     <header class="header">
         <div class="box header__container">
             <nav class="nav">
-                <div class="logo nav__logo"><a class="logo__link" href="index.html">Lorem</a></div><!-- END .logo            -->
+                <div class="nav__action">
+                    <div class="logo nav__logo"><a class="logo__link" href="index.html">Lorem</a></div><!-- END .logo            --><button class="button-menu"><span class="button-menu__line"></span></button>
+                </div>
                 <ul class="nav__list">
                     <li class="nav__item"><a class="nav__link" href="#5">Lorem ipsum</a></li>
                     <li class="nav__item"><a class="nav__link" href="#5">Lorem ipsum</a></li>
@@ -91,19 +93,14 @@
                         <p class="product__composition">Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum Lorem ipsum</p>
                         <p class="product__cost">150p</p><button class="button product__order" type="button">Заказать</button>
                     </div><!-- END .product-->
-                    <div class="product products__item">
-                        <div class="image-box product__image-box"><img class="image-box__img product__img" src="images/products/product.jpg" alt="Product" /></div>
-                        <h4 class="product__title">Lorem ipsum</h4>
-                        <p class="product__composition">Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsum Lorem ipsum</p>
-                        <p class="product__cost">150p</p><button class="button product__order" type="button">Заказать</button>
-                    </div><!-- END .product-->
                 </div>
             </div>
         </section><!-- END .products-->
         <section class="ceo">
             <div class="box ceo__content">
                 <h3 class="title ceo__title">Lorem</h3>
-                <div class="ceo__container-description"><img class="ceo__photo" src="images/ceo/product.jpg" alt="Ceo" />
+                <div class="ceo__container-description">
+                    <div class="image-box ceo__image-box"><img class="image-box__img ceo__photo" src="images/ceo/product.jpg" alt="Ceo" /></div>
                     <div class="ceo__description">
                         <p class="ceo__name">Михаил Салимов</p>
                         <p class="ceo__age">28 лет</p>
@@ -147,9 +144,9 @@
             <!--END .social-->
         </div>
     </footer><!-- END .footer-->
-    <section class="popup-order">
-        <h2 class="visually-hidden">Зака</h2>
-        <div class="popup-order__content">
+    <section class="popup popup-order">
+        <h2 class="visually-hidden">Заказ</h2>
+        <div class="popup__content popup-order__content">
             <div class="image-box popup-order__image-box"><img class="image-box__img" src="images/products/product.jpg" alt="Product" /></div>
             <p class="popup-order__name-product">Lorem ipsum</p>
             <p class="popup-order__cost-product">150р.</p>
@@ -162,9 +159,9 @@
             </div><button class="button popup-order__button" type="submit">Заказать</button>
         </div>
     </section><!-- END .popup-order-->
-    <section class="popup-payment">
+    <section class="popup popup-payment">
         <h3 class="visually-hidden">Оплата заказа</h3>
-        <div class="popup-payment__content">
+        <div class="popup__content popup-payment__content">
             <div class="popup-payment__header">
                 <p class="popup-payment__title">Ваш заказ:</p>
             </div>
@@ -173,17 +170,23 @@
                 <div class="order__description">
                     <p class="order__title">Lorem ipsum dolor</p>
                     <p class="order__portion">Lorem ipsum dolor</p>
-                    <div class="order-toggle"><button class="order-toggle__button" type="button"><span class="order-toggle__button-text">-</span></button><span class="order-toggle__text">1</span><button class="order-toggle__button" type="button"><span class="order-toggle__button-text">+</span></button><span class="order-toggle-cost">150p</span></div>
+                    <div class="order-toggle"><button class="order-toggle__button" type="button"><svg class="order-toggle__button-img">
+                                <use xlink:href="images/svg-sprite/svg-sprite.svg#cross"></use>
+                            </svg></button><span class="order-toggle__text">1</span><button class="order-toggle__button" type="button"><svg class="order-toggle__button-img">
+                                <use xlink:href="images/svg-sprite/svg-sprite.svg#minus"></use>
+                            </svg></button><span class="order-toggle__cost">150p</span></div><!-- END .order-toggle-->
                 </div>
-                <div class="order__remove"><button class="order__remove-button" type="button">Удалить</button></div>
+                <div class="order__remove"><button class="button button--circle order__remove-button" type="button"><svg class="order__remove-img">
+                            <use xlink:href="images/svg-sprite/svg-sprite.svg#delete"></use>
+                        </svg></button></div>
             </div><!-- END .order-->
             <div class="form-payment">
                 <form class="form-payment__content">
-                    <div class="form-payment__item"><label class="form-payment__label" for="name"></label><input class="form-payment__field" type="text" id="name" /></div>
-                    <div class="form-payment__item"><label class="form-payment__label" for="phone"></label><input class="form-payment__field" type="text" id="phone" /></div>
+                    <div class="form-payment__item"><label class="form-payment__label" for="name">Имя</label><input class="form-payment__field" type="text" id="name" /></div>
+                    <div class="form-payment__item"><label class="form-payment__label" for="phone">Телефон</label><input class="form-payment__field" type="text" id="phone" /></div>
                     <p class="form-payment__text">Вариант доставки</p>
-                    <div class="form-payment__item"><input class="form-payment__field" type="radio" id="pickup" name="delivery" /><label class="form-payment__label-delivery" for="pickup">Самовывоз</label></div>
-                    <div class="form-payment__item"><input class="form-payment__field" type="radio" id="delivery" name="delivery" /><label class="form-payment__label-delivery" for="delivery">Доставка</label></div><button class="button form-payment__button" type="submit">Оформить заказ</button>
+                    <div class="form-payment__item form-payment__item--delivery"><input class="form-payment__field form-payment__field--delivery" type="radio" id="pickup" name="delivery" checked="checked" /><label class="form-payment__label form-payment__label--delivery" for="pickup">Самовывоз</label></div>
+                    <div class="form-payment__item form-payment__item--delivery"><input class="form-payment__field form-payment__field--delivery" type="radio" id="delivery" name="delivery" /><label class="form-payment__label form-payment__label--delivery" for="delivery">Доставка</label></div><button class="button form-payment__button" type="submit">Оформить заказ</button>
                 </form>
             </div><!-- END .form-payment-->
         </div>

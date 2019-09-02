@@ -7,6 +7,10 @@
     width: 100%;
     min-height: 450px;
 
+    @media (--XS) {
+        padding-top: 25px;
+    }
+
     &--second {
         background: url("../images/slider/product.jpg") no-repeat center;
         background-color: var(--main-color);
@@ -21,6 +25,14 @@
         font-size: 55px;
         color: var(--white);
         margin-bottom: 20px;
+
+        @media (--M) {
+            font-size: 50px;
+        }
+
+        @media (--XS) {
+            font-size: 45px;
+        }
     }
 
     &__subtitle {

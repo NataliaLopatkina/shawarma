@@ -4,4 +4,14 @@
         background: none;
         outline: none;
     }
+
+    @media (--M) {
+        width: 50px;
+        text-align: right;
+    }
+
+    @media (--S) {
+        width: 100%;
+        text-align: center;
+    }
 }

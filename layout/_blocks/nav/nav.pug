@@ -1,7 +1,11 @@
 mixin nav(obj)
     nav(class="nav")
-        include ../../_blocks/logo/logo.pug
-        +logo(obj)(class="nav__logo")
+        div(class="nav__action")
+            include ../../_blocks/logo/logo.pug
+            +logo(obj)(class="nav__logo")
+
+            button(class="button-menu")
+                span(class="button-menu__line")
         
         ul(class="nav__list")
             li(class="nav__item")

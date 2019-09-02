@@ -1,0 +1,12 @@
+mixin order-toggle()
+    div(class="order-toggle")
+        button(class="order-toggle__button" type="button")
+            svg(class="order-toggle__button-img")
+                use(xlink:href="images/svg-sprite/svg-sprite.svg#cross")
+        span(class="order-toggle__text") 1
+        button(class="order-toggle__button" type="button")
+            svg(class="order-toggle__button-img")
+                use(xlink:href="images/svg-sprite/svg-sprite.svg#minus")
+        span(class="order-toggle__cost") 150p
+
+    // END .order-toggle

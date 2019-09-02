@@ -7,6 +7,11 @@
     outline: none;
     transition: background 0.25s ease;
 
+    &--circle {
+        border-radius: 50%;
+        padding: 0;
+    }
+
     &:hover {
         background: #ffffff;
         color: var(--main-color);

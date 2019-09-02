@@ -5,20 +5,33 @@
     padding-top: 50px;
     padding-bottom: 50px;
 
+    &__box {
+        overflow-x: hidden;
+    }
+
     &__list {
         display: flex;
         margin: -30px;
+
+        @media (--S) {
+            margin: -10px;
+        }
     }
 
     &__item {
         width: calc(100% / 3);
         margin: 30px;
+
+        @media (--S) {
+            margin: 10px;
+        }
     }
 
     &__title {
         font-size: 20px;
         font-weight: 700;
         color: var(--white);
+        text-align: center;
         text-transform: uppercase;
         margin-bottom: 10px;
     }
@@ -27,6 +40,7 @@
         font-size: 20px;
         color: var(--white);
         display: flex;
+        justify-content: center;
         align-items: center;
         margin-bottom: 5px;
     }

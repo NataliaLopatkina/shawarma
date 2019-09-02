@@ -1,0 +1,46 @@
+.button-menu {
+    display: none;
+
+    @media (--S) {
+        display: block;
+        width: 22px;
+        height: 22px;
+        padding: 0;
+        background: none;
+        border: none;
+    }
+
+    &__line {
+        @media (--S) {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #ffffff;
+        }
+        
+        &::before,
+        &::after {
+            @media (--S) {
+                content: "";
+                position: absolute;
+                display: block;
+                width: 22px;
+                height: 2px;
+                background: #ffffff;
+            }
+        }
+
+        &::before {
+            @media (--S) {
+                top: -9px;
+            }
+        }
+
+        &::after {
+            @media (--S) {
+                bottom: -9px;
+            }
+        }
+    }
+}

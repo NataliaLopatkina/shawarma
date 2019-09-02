@@ -2,8 +2,8 @@
 @import "../reset/reset.css";
 
 /* Styles */
-@import "../header/header.css";
 @import "../box/box.css";
+@import "../header/header.css";
 @import "../title/title.css";
 @import "../button/button.css";
 @import "../image-box/image-box.css";

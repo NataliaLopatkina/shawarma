@@ -7,14 +7,13 @@ mixin order()
         div(class="order__description")
             p(class="order__title") Lorem ipsum dolor
             p(class="order__portion") Lorem ipsum dolor
-            div(class="order-toggle")
-                button(class="order-toggle__button" type="button")
-                    span(class="order-toggle__button-text") -
-                span(class="order-toggle__text") 1
-                button(class="order-toggle__button" type="button")
-                    span(class="order-toggle__button-text") +
-                span(class="order-toggle-cost") 150p
+            
+            include ../../_blocks/order-toggle/order-toggle.pug
+            +order-toggle()
+
         div(class="order__remove")
-            button(class="order__remove-button" type="button") Удалить
+            button(class="button button--circle order__remove-button" type="button")
+                svg(class="order__remove-img")
+                    use(xlink:href="images/svg-sprite/svg-sprite.svg#delete")
 
     // END .order

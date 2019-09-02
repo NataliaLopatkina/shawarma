@@ -1,5 +1,8 @@
+@import "../order-toggle/order-toggle.css";
+
 .order {
     display: flex;
+    align-items: flex-start;
     justify-content: space-between;
 
     &__image-box {
@@ -7,15 +10,33 @@
     }
 
     &__title {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
         color: var(--main-color);
         margin-bottom: 5px;
     }
 
     &__portion {
-        font-size: 16px;
+        font-size: 14px;
         color: var(--main-color);
         margin-bottom: 5px;
+    }
+
+    &__remove-button {
+        width: 20px;
+        height: 20px;
+        color: var(--main-color);
+        background: none;
+        border: none;
+        transition: color 0.25s ease;
+
+        &:hover {
+            color: var(--hover-color);
+        }
+    }
+
+    &__remove-img {
+        width: 100%;
+        height: 100%;
     }
 }

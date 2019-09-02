@@ -1,0 +1,36 @@
+.order-toggle {
+    display: flex;
+    align-items: center;
+
+    &__button {
+        color: var(--main-color);
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        border: none;
+        background: none;
+        outline: none;
+        transition: color 0.25s ease;
+
+        &:hover {
+            color: var(--hover-color);
+        }
+    }
+    
+    &__button-img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__text {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    &__cost {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--main-color);
+        margin-left: 20px;
+    }
+}

@@ -1,37 +1,4 @@
 .popup-order {
-    background: rgba(0, 0, 0, 0.7);
-    position: fixed;
-    z-index: 100000;
-    left: 0;
-    right: 0;
-    top: 0;
-    height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    width: 0;
-    transition-property: opacity, visibility, width;
-    transition-duration: 1s;
-    transition-timing-function: ease;
-
-    &.is-active {
-        opacity: 1;
-        visibility: visible;
-        width: 100%;
-    }
-
-
-    &__content {
-        max-width: 400px;
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-        background: #ffffff;
-        position: fixed;
-        top: calc(50% - 150px);
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-    }
 
     &__image-box {
         margin: 0 auto;

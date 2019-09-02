@@ -107,32 +107,53 @@ class Popup {
         this.init();
     }
 
-    togglePopup() {
-        const popup = document.querySelector('.popup-order');
-        popup.classList.toggle('is-active');
+    openPopup(popup) {
+        this.popup.classList.add('is-active');
 
         const page = document.querySelector('.page');
-        page.classList.toggle('popup-is-open');
+        page.classList.add('popup-is-open');
+    }
+
+    closePopup(popup) {
+        this.popup.classList.remove('is-active');
+
+        const page = document.querySelector('.page');
+        page.classList.remove('popup-is-open');
     }
 
     init() {
         const buttons = document.querySelectorAll('.product__order');
         buttons.forEach((item)=> {
             item.addEventListener('click', ()=> {
-                this.togglePopup();
+                this.popup = document.querySelector('.popup-order');
+                this.openPopup(this.popup)
             })
         })
 
-        document.addEventListener('click', ()=> {
-            const popup = document.querySelector('.popup-order');
-            const popupActive = popup.classList.contains('is-active');
-            const target = event.target;
-            const popupTarget = popup.contains(target);
-            const targetButtonOrder = popup.querySelector('.popup-order__button');
+        const buttonOrder = document.querySelector('.popup-order__button');
+        buttonOrder.addEventListener('click', ()=> {
+            this.popup = document.querySelector('.popup-payment');
+            this.openPopup(this.popup);
+        })
 
-            if (popupTarget === true && popupActive && target != targetButtonOrder) {
-                this.togglePopup();
-            }
+        const buttonRemoveOrder = document.querySelector('.order__remove-button');
+        buttonRemoveOrder.addEventListener('click', ()=> {
+            this.popup = document.querySelector('.popup-payment');
+            this.closePopup(this.popup);
+        })
+
+        document.addEventListener('click', ()=> {
+            const popups = document.querySelectorAll('.popup');
+            popups.forEach((item)=> {
+                const popupActive = item.classList.contains('is-active');
+                const target = event.target;
+                const popupTarget = item.contains(target);
+                const popupContentTarget = item.querySelector('.popup__content').contains(target);
+
+                if (popupTarget === true && popupActive && popupContentTarget === false) {
+                    this.closePopup(item);
+                }
+            })
         })
     }
 }
