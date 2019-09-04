@@ -1,0 +1,13 @@
+mixin header-contacts()
+    div(class="header-contacts")&attributes(attributes)
+        div(class="header-contacts__item")
+            a(class="header-contacts__text" href="tel:89034037730")
+                svg(class="icon header-contacts__icon")
+                    use(xlink:href="images/svg-sprite/svg-sprite.svg#phone")
+                span 8 903 403-77-30
+        div(class="header-contacts__item")
+            svg(class="icon header-contacts__icon")
+                use(xlink:href="images/svg-sprite/svg-sprite.svg#location")
+            span(class="header-contacts__text") Петровская 111а (около Политеха)
+
+    // END .header-contacts

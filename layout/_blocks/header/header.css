@@ -1,5 +1,7 @@
 @import "../nav/nav.css";
 @import "../basket/basket.css";
+@import "../header-contacts/header-contacts.css";
+@import "../menu-mobile/menu-mobile.css";
 
 .header {
     background: var(--main-color);
@@ -10,6 +12,10 @@
         align-items: center;
         padding-top: 20px;
         padding-bottom: 20px;
+
+        @media (--M) {
+            flex-direction: column;
+        }
 
         @media (--S) {
             flex-direction: column;

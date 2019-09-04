@@ -1,7 +1,5 @@
 .logo {
-    &__link {
-        font-family: "Marck Script", "Arial", sans-serif;
-        font-size: 20px;
-        color: var(--white);
+    &__image-box {
+        width: 85px;
     }
 }

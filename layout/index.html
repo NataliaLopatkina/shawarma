@@ -5,7 +5,6 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <title>Shawarma</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700&amp;display=swap&amp;subset=cyrillic" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Marck+Script&amp;display=swap&amp;subset=cyrillic" rel="stylesheet" />
     <link rel="stylesheet" href="stylesheets/index.min.css" />
 </head>
 
@@ -14,7 +13,9 @@
         <div class="box header__container">
             <nav class="nav">
                 <div class="nav__action">
-                    <div class="logo nav__logo"><a class="logo__link" href="index.html">Lorem</a></div><!-- END .logo            --><button class="button-menu"><span class="button-menu__line"></span></button>
+                    <div class="logo nav__logo"><a class="logo__link" href="index.html">
+                            <div class="image-box logo__image-box"><img class="image-box__img logo__img" src="images/logo/logo.png" alt="Logo" /></div>
+                        </a></div><!-- END .logo--><button class="button-menu"><span class="button-menu__line"></span></button>
                 </div>
                 <ul class="nav__list">
                     <li class="nav__item"><a class="nav__link" href="#5">Lorem ipsum</a></li>
@@ -23,7 +24,32 @@
                     <li class="nav__item"><a class="nav__link" href="#5">Lorem ipsum</a></li>
                 </ul>
             </nav><!-- END .nav-->
-            <div class="basket"><button class="basket__button" type="button"><img class="basket__img" src="images/svg-icons/cart.svg" /></button></div><!-- END .basket-->
+            <div class="header-contacts">
+                <div class="header-contacts__item"><a class="header-contacts__text" href="tel:89034037730"><svg class="icon header-contacts__icon">
+                            <use xlink:href="images/svg-sprite/svg-sprite.svg#phone"></use>
+                        </svg><span>8 903 403-77-30</span></a></div>
+                <div class="header-contacts__item"><svg class="icon header-contacts__icon">
+                        <use xlink:href="images/svg-sprite/svg-sprite.svg#location"></use>
+                    </svg><span class="header-contacts__text">Петровская 111а (около Политеха)</span></div>
+            </div><!-- END .header-contacts-->
+            <div class="menu-mobile">
+                <nav class="nav menu-mobile__nav">
+                    <ul class="nav__list menu-mobile__list">
+                        <li class="nav__item"><a class="nav__link" href="#5">Lorem ipsum</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#5">Lorem ipsum</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#5">Lorem ipsum</a></li>
+                        <li class="nav__item"><a class="nav__link" href="#5">Lorem ipsum</a></li>
+                    </ul>
+                </nav>
+                <div class="header-contacts header-contacts--mobile">
+                    <div class="header-contacts__item"><a class="header-contacts__text" href="tel:89034037730"><svg class="icon header-contacts__icon">
+                                <use xlink:href="images/svg-sprite/svg-sprite.svg#phone"></use>
+                            </svg><span>8 903 403-77-30</span></a></div>
+                    <div class="header-contacts__item"><svg class="icon header-contacts__icon">
+                            <use xlink:href="images/svg-sprite/svg-sprite.svg#location"></use>
+                        </svg><span class="header-contacts__text">Петровская 111а (около Политеха)</span></div>
+                </div><!-- END .header-contacts-->
+            </div><!-- END .menu-mobile-->
         </div>
     </header><!-- END .header-->
     <main class="main">
@@ -32,19 +58,19 @@
                 <div class="slide-item">
                     <div class="box slide-item__content">
                         <h1 class="slide-item__title">Lorem ipsum</h1>
-                        <h2 class="slide-item__subtitle">Lorem ipsum</h2><button class="slide-item__button" type="button"><img class="slide-item__button-img" src="images/svg-icons/arrow-bottom.svg" /></button>
+                        <h2 class="slide-item__subtitle">Lorem ipsum</h2>
                     </div>
                 </div><!-- END .slide-item-->
                 <div class="slide-item slide-item--second">
                     <div class="box slide-item__content">
                         <h1 class="slide-item__title">Lorem ipsum</h1>
-                        <h2 class="slide-item__subtitle">Lorem ipsum</h2><button class="slide-item__button" type="button"><img class="slide-item__button-img" src="images/svg-icons/arrow-bottom.svg" /></button>
+                        <h2 class="slide-item__subtitle">Lorem ipsum</h2>
                     </div>
                 </div><!-- END .slide-item-->
                 <div class="slide-item slide-item--third">
                     <div class="box slide-item__content">
                         <h1 class="slide-item__title">Lorem ipsum</h1>
-                        <h2 class="slide-item__subtitle">Lorem ipsum</h2><button class="slide-item__button" type="button"><img class="slide-item__button-img" src="images/svg-icons/arrow-bottom.svg" /></button>
+                        <h2 class="slide-item__subtitle">Lorem ipsum</h2>
                     </div>
                 </div><!-- END .slide-item-->
             </div>
@@ -109,7 +135,19 @@
                 </div>
             </div>
         </section><!-- END .ceo-->
-        <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.7772318466427!2d38.917695215581396!3d47.22094097916097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3fd5001fc1667%3A0x4f80e08277d23cc7!2z0J_QtdGC0YDQvtCy0YHQutCw0Y8g0YPQuy4sIDEwOSwg0KLQsNCz0LDQvdGA0L7Qsywg0KDQvtGB0YLQvtCy0YHQutCw0Y8g0L7QsdC7LiwgMzQ3OTA0!5e0!3m2!1sru!2sru!4v1563912114311!5m2!1sru!2sru" width="600" height="400" style="border:0" allowfullscreen></iframe></div><!-- END .map-->
+        <section class="promotions">
+            <div class="box promotions__content">
+                <h3 class="title promotions__title">Lorem</h3>
+                <div class="promotion">
+                    <div class="promotion__description">
+                        <p class="promotion__title">Lorem</p>
+                        <p class="promotion__text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi quidem enim ut officia officiis deleniti cum facere harum labore similique, asperiores in et distinctio nemo nostrum voluptate suscipit quod vitae? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi quidem enim ut officia officiis deleniti cum facere harum labore similique, asperiores in et distinctio nemo nostrum voluptate suscipit quod vitae? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi quidem enim ut officia officiis deleniti cum facere harum labore similique, asperiores in et distinctio nemo nostrum voluptate suscipit quod vitae? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi quidem enim ut officia officiis deleniti cum facere harum labore similique, asperiores in et distinctio nemo nostrum voluptate suscipit quod vitae?</p>
+                    </div>
+                    <div class="image-box promotion__image-box"><img class="image-box__img promotion__photo" src="images/ceo/product.jpg" alt="Promotion" /></div>
+                </div><!-- END .promotion-->
+            </div>
+        </section><!-- END .promotions-->
+        <div class="map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.725954752862!2d38.9164854158622!3d47.22194422246312!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3fd506d17bf29%3A0x36d959c720e4f304!2z0J_QtdGC0YDQvtCy0YHQutCw0Y8g0YPQuy4sIDExMdCQLCDQotCw0LPQsNC90YDQvtCzLCDQoNC-0YHRgtC-0LLRgdC60LDRjyDQvtCx0LsuLCAzNDc5MDA!5e0!3m2!1sru!2sru!4v1567603160615!5m2!1sru!2sru" width="600" height="450" frameborder="0" style="border:0;"></iframe></div><!-- END .map-->
     </main>
     <footer class="footer">
         <div class="box footer__box">
@@ -118,7 +156,7 @@
                     <p class="footer__title">Наш адрес:</p>
                     <p class="footer__text"> <svg class="footer__icon">
                             <use xlink:href="images/svg-sprite/svg-sprite.svg#location"></use>
-                        </svg><span>Петровская 111</span></p>
+                        </svg><span>Петровская 111а</span></p>
                 </div>
                 <div class="footer__item">
                     <p class="footer__title">Время работы:</p>

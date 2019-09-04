@@ -1,0 +1,17 @@
+mixin menu-mobile()
+    div(class="menu-mobile")
+        nav(class="nav menu-mobile__nav")
+            ul(class="nav__list menu-mobile__list")
+                li(class="nav__item")
+                    a(class="nav__link" href="#5") Lorem ipsum
+                li(class="nav__item")
+                    a(class="nav__link" href="#5") Lorem ipsum
+                li(class="nav__item")
+                    a(class="nav__link" href="#5") Lorem ipsum
+                li(class="nav__item")
+                    a(class="nav__link" href="#5") Lorem ipsum
+
+        include ../../_blocks/header-contacts/header-contacts.pug
+        +header-contacts()(class="header-contacts--mobile")
+
+    // END .menu-mobile

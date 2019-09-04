@@ -1,0 +1,39 @@
+.promotion {
+    display: flex;
+
+    @media (--M) {
+        flex-direction: column;
+    }
+
+    &__image-box {
+        max-width: 600px;
+        flex-shrink: 0;
+
+        @media (--M) {
+            max-width: 100%;
+        }
+    }
+
+    &__description {
+        margin-right: 20px;
+
+        @media (--M) {
+            margin-bottom: 20px;
+            margin-right: 0;
+        }
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--main-color);
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: calc(22/18);
+        text-align: justify;
+    }
+}

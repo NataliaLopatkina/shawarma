@@ -1,7 +1,7 @@
 .product {
     padding: 20px;
     text-align: center;
-    width: 230px;
+    width: 300px;
     box-shadow: 0 0 10px 0 var(--main-color);
     box-sizing: border-box;
     transition: box-shadow 0.5s ease;
@@ -9,6 +9,14 @@
 
     @media (--M) {
         width: 220px;
+    }
+
+    @media (--S) {
+        width: 245px;
+    }
+
+    @media (--XS) {
+        width: 280px;
     }
 
     &:hover {

@@ -6,7 +6,7 @@
     padding-bottom: 50px;
 
     &__box {
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
     &__list {
@@ -16,6 +16,11 @@
         @media (--S) {
             margin: -10px;
         }
+
+        @media (--XS) {
+            flex-direction: column;
+            margin: 0;
+        }
     }
 
     &__item {
@@ -24,6 +29,16 @@
 
         @media (--S) {
             margin: 10px;
+        }
+
+        @media (--XS) {
+            width: 100%;
+            margin: 0;
+            margin-bottom: 25px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
         }
     }
 
