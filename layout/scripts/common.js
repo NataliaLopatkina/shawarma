@@ -102,6 +102,8 @@ if (document.querySelectorAll(".controls__arrow").length > 0) {
     }
 }
 
+// Popups
+
 class Popup {
     constructor() {
         this.init();
@@ -158,4 +160,56 @@ class Popup {
     }
 }
 
-let popup = new Popup();
+const popup = new Popup();
+
+// Menu
+
+class Menu {
+    constructor(){
+        this.handlerClick();
+    }
+
+    // Добавление класса меню
+    // Изменение высоты блока
+    // Нажатие на кнопку
+    // Ресайз
+
+    toggleButtonMenu(buttonMenu) {
+        if (buttonMenu.classList.contains('button-menu--closed')) {
+            buttonMenu.classList.remove('button-menu--closed');
+        } else {
+            buttonMenu.classList.add('button-menu--closed');
+        }
+    }
+
+    toggleNav(nav) {
+        const navMenuHeight = document.querySelector('.menu-mobile');
+        const headerContactsHeight = document.querySelector('.header-contacts--mobile');
+
+        if(nav.classList.contains('active')) {
+            nav.classList.remove('active');
+            nav.style.height = '0px';
+        } else {
+            nav.classList.add('active');
+            nav.style.height = navMenuHeight + headerContactsHeight + 'px';
+        }
+    }
+
+    // calcHeightMenu (navMenu, headerContacts) {
+    //     const navHeight = navMenu.offsetHeight;
+    //     const headerContactsHeight = headerContacts.offsetHeight;
+    // }
+
+    handlerClick() {
+        const buttonMenu = document.querySelector('.button-menu');
+        const nav = document.querySelector('.menu-mobile');
+        
+
+        buttonMenu.addEventListener('click', ()=> {
+            this.toggleButtonMenu(buttonMenu);
+            this.toggleNav(nav);
+        })
+    }
+}
+
+const menu = new Menu();

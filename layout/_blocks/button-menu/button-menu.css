@@ -11,6 +11,27 @@
         outline: none;
     }
 
+    &--closed {
+        .button-menu__line {
+            @media (--S) {
+                transform: rotate(45deg);
+            }
+
+            &:before {
+                @media (--S) {
+                    transform: rotate(90deg);
+                    top: 0;
+                }
+            }
+
+            &:after {
+                @media (--S) {
+                    display: none;
+                }
+            }
+        }
+    }
+
     &__line {
         @media (--S) {
             position: relative;
@@ -18,6 +39,7 @@
             width: 100%;
             height: 2px;
             background: #ffffff;
+            transition: transform 0.3s ease;
         }
         
         &::before,
