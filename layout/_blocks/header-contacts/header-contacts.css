@@ -44,5 +44,24 @@
     &__text {
         font-size: 18px;
         color: var(--white);
+        transition: color 0.25s ease;
+
+        &:hover {
+            color: var(--hover-color);
+        }
+
+        &:active {
+            color: var(--active-color);
+        }
+
+        &--not-hover {
+            &:hover {
+                color: var(--white);
+            }
+
+            &:active {
+                color: var(--white);
+            }
+        }
     }
 }
