@@ -2,6 +2,8 @@
 @import "../form-payment/form-payment.css";
 
 .popup-payment {
+    display: none;
+    
     &__title {
         font-size: 18px;
         font-weight: 700;

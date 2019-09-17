@@ -1,4 +1,5 @@
 .popup-order {
+    display: none;
 
     &__image-box {
         margin: 0 auto;

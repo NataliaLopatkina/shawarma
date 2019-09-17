@@ -14,12 +14,12 @@
     &--closed {
         .button-menu__line {
             @media (--S) {
-                transform: rotate(45deg);
+                transform: rotate(-135deg);
             }
 
             &:before {
                 @media (--S) {
-                    transform: rotate(90deg);
+                    transform: rotate(270deg);
                     top: 0;
                 }
             }

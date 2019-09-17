@@ -2,8 +2,10 @@ mixin controls(obj)
     div(class="controls")
         div(class="box controls__content")
             a(class="controls__arrow controls__arrow--prev" href="#5")
-                img(class="controls__img" src="images/svg-icons/left-arrow.svg" alt="Left arrow")
+                svg(class="controls__icon")
+                    use(xlink:href="images/svg-sprite/svg-sprite.svg#arrow-left")
             a(class="controls__arrow controls__arrow--next" href="#5")
-                img(class="controls__img" src="images/svg-icons/right-arrow.svg" alt="Right arrow")
+                svg(class="controls__icon")
+                    use(xlink:href="images/svg-sprite/svg-sprite.svg#arrow-right")
 
     // END .controls

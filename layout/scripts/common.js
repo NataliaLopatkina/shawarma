@@ -2,109 +2,181 @@ console.log("I'm Shawarma");
 
 // Slider
 
-if (document.querySelectorAll(".controls__arrow").length > 0) {
+class Slider {
+    constructor(){
+        this.animation = false;
+        this.slideIndex = 0;
+        this.sliderList = document.querySelector('.slider__list');
+        this.sliderItem = document.querySelectorAll('.slide-item');
+        this.translatePosition = -(100 / (this.sliderItem.length + 2)) + "%";
+        this.translatePositionLast = - this.sliderItem.length * (100 / (this.sliderItem.length + 2)) + "%";
 
-    var animation = false;
-    var sliderList = document.querySelector(".slider__list");
-    var sliderItem = document.querySelectorAll(".slide-item");
-    var slidePrev = document.querySelector(".controls__arrow--prev");
-    var slideNext = document.querySelector(".controls__arrow--next");
-    var slideIndex = 0;
-    var children = sliderList.children;
-    var cloneElementFirst = children[0].cloneNode(true);
-    var cloneElementLast = children[sliderItem.length - 1].cloneNode(true);
+        this.addSlidesForLoop();
+        this.addHandlers();
+    }
 
-    slidePrev.onclick = scrollToPrev;
-    slideNext.onclick = scrollToNext;
-    sliderList.style.width = sliderItem.length * 100 + "%";
-    sliderList.insertBefore(cloneElementLast, children[0]);
-    sliderList.appendChild(cloneElementFirst);
-    sliderList.style.width = (sliderItem.length + 2) * 100 + "%";
+    addSlidesForLoop() {
+        const children = this.sliderList.children;
+        const cloneElementFirst = children[0].cloneNode(true);
+        const cloneElementLast = children[this.sliderItem.length - 1].cloneNode(true);
+        
+        this.sliderList.insertBefore(cloneElementLast, children[0]);
+        this.sliderList.appendChild(cloneElementFirst);
+        this.sliderList.style.width = (this.sliderItem.length + 2) * 100 + "%";
 
-    var translatePosition = -(100 / (sliderItem.length + 2)) + "%";
+        this.addTransformSlider();
+    }
 
-    sliderList.style.transform = "translateX(" + translatePosition + ")";
+    addTransformSlider() {
+        this.sliderList.style.transform = "translateX(" + this.translatePosition + ")";
+    }
 
-    function scrollToNext() {
-        if (animation) {
+    addAnimationSlider() {
+        this.sliderList.classList.add("transition");
+    }
+
+    removeAnimationSlider() {
+        this.sliderList.classList.remove("transition");
+    }
+
+    calcWidthSlider() {
+        this.sliderList.style.width = (this.sliderItem.length + 2) * 100 + "%";
+    }
+
+    translateScroll() {
+        const translateScroll = (-(this.slideIndex + 1) * (100 / (this.sliderItem.length + 2))) + "%";
+        this.sliderList.style.transform = "translateX(" + translateScroll + ")";
+    }
+
+    switchHandler() {
+        setTimeout(() => {
+            this.animation = false;
+        }, 1000)
+    }
+
+    scrollToNext() {
+        if (this.animation) {
             return;
         }
 
-        animation = true;
+        this.animation = true;
+        this.slideIndex++;
 
-        slideNext.classList.add("active");
-        slidePrev.classList.remove("active");
+        this.addAnimationSlider();
 
-        slideIndex++;
-        sliderList.classList.add("transition");
-
-        if (slideIndex > sliderItem.length - 1) {
-            setTimeout(function () {
-                sliderList.classList.remove("transition");
-                sliderList.style.width = (sliderItem.length + 2) * 100 + "%";
-                slideIndex = 0;
-                sliderList.style.transform = "translateX(" + translatePosition + ")";
-                animation = false;
+        if (this.slideIndex > this.sliderItem.length - 1) {
+            setTimeout(()=> {
+                this.removeAnimationSlider();
+                this.calcWidthSlider();
+                this.slideIndex = 0;
+                this.addTransformSlider();
+                this.animation = false;
             }, 1000)
+            
+            this.translateScroll();
 
-            var translateScroll = (-(slideIndex + 1) * (100 / (sliderItem.length + 2))) + "%";
-            sliderList.style.transform = "translateX(" + translateScroll + ")";
-        }
-
-        else {
-            var translateScroll = (-(slideIndex + 1) * (100 / (sliderItem.length + 2))) + "%";
-            sliderList.style.transform = "translateX(" + translateScroll + ")";
-
-            setTimeout(function () {
-                animation = false;
-            }, 1000)
+        } else {
+            this.translateScroll();
+            this.switchHandler();
         }
     }
 
-    // setInterval(function() {
-    //     scrollToNext();
-    // }, 3500)
-
-    function scrollToPrev() {
-        if (animation) {
+    scrollToPrev() {
+        if(this.animation) {
             return;
         }
-        animation = true;
 
-        slidePrev.classList.add("active");
-        slideNext.classList.remove("active");
+        this.animation = true;
+        this.slideIndex--;
 
-        slideIndex--;
-        sliderList.classList.add("transition");
+        this.addAnimationSlider();
 
-        if (slideIndex < 0) {
-            setTimeout(function () {
-                sliderList.classList.remove("transition");
-                sliderList.style.width = (sliderItem.length + 2) * 100 + "%";
-                slideIndex = sliderItem.length - 1;
-                var translatePositionLast = -sliderItem.length * (100 / (sliderItem.length + 2)) + "%";
-                sliderList.style.transform = "translateX(" + translatePositionLast + ")";
-                animation = false;
+        if (this.slideIndex < 0) {
+            setTimeout(()=> {
+                this.removeAnimationSlider();
+                this.calcWidthSlider();
+                this.slideIndex = this.sliderItem.length - 1;
+                this.sliderList.style.transform = "translateX(" + this.translatePositionLast + ")";
+                this.animation = false;
             }, 1000)
 
-            var translateScroll = (-(slideIndex + 1) * (100 / (sliderItem.length + 2))) + "%";
-            sliderList.style.transform = "translateX(" + translateScroll + ")";
-        }
+            this.translateScroll();
 
-        else {
-            var translateScroll = (-(slideIndex + 1) * (100 / (sliderItem.length + 2))) + "%";
-            sliderList.style.transform = "translateX(" + translateScroll + ")";
-
-            setTimeout (function () {
-                animation = false;
-            }, 1000)
+        } else {
+            this.translateScroll();
+            this.switchHandler();
         }
+    }
+
+    addHandlers() {
+        const slidePrev = document.querySelector('.controls__arrow--prev');
+        const slideNext = document.querySelector('.controls__arrow--next');
+
+        slidePrev.addEventListener('click', ()=> {
+            slidePrev.classList.add('active');
+            slideNext.classList.remove('active');
+
+            this.scrollToPrev();
+        })
+
+        slideNext.addEventListener('click', ()=> {
+            slidePrev.classList.remove('active');
+            slideNext.classList.add('active');
+
+            this.scrollToNext();
+        })
     }
 }
+
+const slider = new Slider();
 
 // Menu
 
 class Menu {
+    constructor() {
+        this.init();
+    }
+
+    toggleMenu() {
+        const menu = document.querySelector('.menu-mobile');
+        menu.classList.toggle('active');
+
+        this.calcHeight(menu);
+    }
+
+    calcHeight(menu) {
+        const navHeight = document.querySelector('.menu-mobile__nav').offsetHeight;
+        const contactsHeight = document.querySelector('.header-contacts--mobile').offsetHeight;
+        const height = navHeight + contactsHeight + 'px';
+
+        if (window.innerWidth > 767) {
+            menu.style.height = 0;
+        } else {
+            if (menu.classList.contains('active')) {
+                menu.style.height = height;
+            } else {
+                menu.style.height = 0;
+            }
+        }
+    }
+
+    toggleButton(button) {
+        button.classList.toggle('button-menu--closed');
+    }
+
+    init() {
+        const buttonMenu = document.querySelector('.button-menu');
+        const menu = document.querySelector('.menu-mobile');
+
+        buttonMenu.addEventListener('click', ()=> {
+            this.toggleButton(buttonMenu);
+            this.toggleMenu();
+        })
+
+        window.addEventListener('resize', ()=> {
+            this.calcHeight(menu);
+        })
+    }
 }
 
 const menu = new Menu();
@@ -128,7 +200,7 @@ class ScrollOnPage {
         const menuLink4 = $('.nav__link--location');
 
         const scrollToProducts = $('.products__title').offset().top;
-        const scrollToCeo = $('.ceo__title').offset().top;
+        const scrollToCeo = $('.ceo__title').offset().top - 50 + 'px';
         const scrollToPromotions = $('.promotions__title').offset().top;
         const scrollToLocation = $('.map__title').offset().top;
 
