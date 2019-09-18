@@ -25,6 +25,9 @@ div(class="slider")
             +slide-item(obj)
 
     include ../../_blocks/controls/controls.pug
-    +controls(obj)
+    +controls({
+        controlTypePrev: "prev",
+        controlTypeNext: "next"
+    })
 
     // END .slider

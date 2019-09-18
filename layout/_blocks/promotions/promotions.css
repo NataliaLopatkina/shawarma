@@ -2,10 +2,24 @@
 
 .promotions {
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 30px;
+
+    &__content {
+        overflow-x: hidden;
+        padding: 0;
+        width: 1200px;
+    }
 
     &__title {
         text-align: center;
         margin-bottom: 30px;
+    }
+
+    &__list {
+        display: flex;
+
+        &.transition {
+            transition: transform 1s ease;
+        }
     }
 }

@@ -1,10 +1,10 @@
 mixin controls(obj)
     div(class="controls")
         div(class="box controls__content")
-            a(class="controls__arrow controls__arrow--prev" href="#5")
+            a(class="controls__arrow controls__arrow--" + obj.controlTypePrev href="#5")
                 svg(class="controls__icon")
                     use(xlink:href="images/svg-sprite/svg-sprite.svg#arrow-left")
-            a(class="controls__arrow controls__arrow--next" href="#5")
+            a(class="controls__arrow controls__arrow--" + obj.controlTypeNext href="#5")
                 svg(class="controls__icon")
                     use(xlink:href="images/svg-sprite/svg-sprite.svg#arrow-right")
 

@@ -2,8 +2,34 @@ mixin promotions()
     section(class="promotions")
         div(class="box promotions__content")
             h3(class="title promotions__title") Lorem
-            
-            include ../../_blocks/promotion/promotion.pug
-            +promotion()
+            div(class="promotions__list")
+
+                include ../../_blocks/promotion/promotion.pug
+                -
+                    var promotions = [
+                        {
+                            title: 'Lorem',
+                            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, mollitia',
+                        },
+
+                        {
+                            title: 'Lorem ipsum dolor sit amet',
+                            text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum debitis labore hic aliquam provident nihil!',
+                        },
+
+                        {
+                            title: 'Lorem',
+                            text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos accusamus quibusdam officia.',
+                        },
+                    ]
+
+                each obj in promotions
+                    +promotion(obj)
+
+        include ../../_blocks/controls/controls.pug
+        +controls({
+            controlTypePrev: "promotion-prev",
+            controlTypeNext: "promotion-next"
+        })
 
     // END .promotions

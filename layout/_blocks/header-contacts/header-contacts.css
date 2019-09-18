@@ -44,6 +44,8 @@
     &__text {
         font-size: 18px;
         color: var(--white);
+        display: flex;
+        align-items: center;
         transition: color 0.25s ease;
 
         &:hover {
